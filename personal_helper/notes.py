@@ -1,4 +1,5 @@
 """..."""
+from abc import ABC, abstractmethod
 from collections import UserDict
 from pathlib import Path
 import pickle
@@ -9,7 +10,13 @@ except ImportError:
     from constants import FILE_NOTES
 
 
-class Notes(UserDict):
+class AbstractPrinter(ABC):
+    @abstractmethod
+    def show_all_sorted_notes(self):
+        pass
+
+
+class Notes(AbstractPrinter, UserDict):
     """..."""
 
     def __init__(self) -> None:

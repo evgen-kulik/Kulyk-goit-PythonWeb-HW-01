@@ -1,6 +1,26 @@
 """
 The TablePrinter module provides a utility class for printing tabular data to the console.
 """
+from abc import ABC, abstractmethod
+
+
+class AbstractPrinter(ABC):
+    @abstractmethod
+    def calculate_column_widths(self):
+        pass
+
+    @abstractmethod
+    def format_columns(self):
+        pass
+
+    @abstractmethod
+    def format_data_row(self):
+        pass
+
+    @abstractmethod
+    def print_table(self):
+        pass
+
 
 class TablePrinter:
     """
