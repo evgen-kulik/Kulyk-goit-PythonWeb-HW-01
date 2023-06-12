@@ -10,11 +10,11 @@ class AbstractPrinter(ABC):
         pass
 
     @abstractmethod
-    def format_columns(self):
+    def format_columns(self, columns: list, column_widths: list[int]):
         pass
 
     @abstractmethod
-    def format_data_row(self):
+    def format_data_row(self, row: list | str, column_widths: list[int]):
         pass
 
     @abstractmethod
@@ -22,7 +22,7 @@ class AbstractPrinter(ABC):
         pass
 
 
-class TablePrinter:
+class TablePrinter(AbstractPrinter):
     """
     A utility class for printing tabular data to the console.
 
